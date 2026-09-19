@@ -1,47 +1,21 @@
-name: Build macOS DMG
-
+name: Build GYAN VPN macOS DMG
 on:
   workflow_dispatch:
   push:
     branches: [main]
-
 jobs:
   build-macos:
     runs-on: macos-latest
-    permissions:
-      contents: read
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
-
-      - name: Install
-        run: npm install
-
-      - name: Build web app
-        run: npm run build
-
-      - name: Package dashboard
-        run: |
-          mkdir -p dist/GYAN-VPN
-          cp -R .next dist/GYAN-VPN/.next
-          cp package.json dist/GYAN-VPN/package.json
-          cp README.md dist/GYAN-VPN/README.md
-
-      - name: Create DMG
-        run: |
-          mkdir -p dmg-root
-          cp -R dist/GYAN-VPN dmg-root/
-          ln -s /Applications dmg-root/Applications
-          hdiutil create -volname "GYAN VPN" -srcfolder dmg-root -ov -format UDZO GYAN-VPN.dmg
-
-      - name: Upload DMG
-        uses: actions/upload-artifact@v4
+      - run: npm install
+      - run: npm run build
+      - run: npx electron-builder --mac dmg --publish never
+      - uses: actions/upload-artifact@v4
         with:
           name: GYAN-VPN-macOS
-          path: GYAN-VPN.dmg
+          path: dist/*.dmg
           retention-days: 30
