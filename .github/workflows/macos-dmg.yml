@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
 
       - name: Install
         run: npm install
@@ -30,7 +29,6 @@ jobs:
         run: |
           mkdir -p dist/GYAN-VPN
           cp -R .next dist/GYAN-VPN/.next
-          cp -R public dist/GYAN-VPN/public 2>/dev/null || true
           cp package.json dist/GYAN-VPN/package.json
           cp README.md dist/GYAN-VPN/README.md
 
