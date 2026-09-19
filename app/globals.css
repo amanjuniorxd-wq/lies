@@ -1,0 +1,68 @@
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#070b12;color:#ecf3ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button{font:inherit;color:inherit}
+.shell{max-width:1240px;margin:auto;padding:28px 30px 22px}
+.topbar{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:12px;align-items:center}
+.brandMark{width:40px;height:40px;display:grid;place-items:center;border:1px solid #284057;border-radius:12px;background:#0c1724;box-shadow:0 8px 30px #0006}
+.brand strong{display:block;font-size:14px;letter-spacing:.12em}
+.brand span{display:block;color:#71839a;font-size:11px;margin-top:3px}
+.topActions{display:flex;gap:10px;align-items:center}
+.securePill{display:flex;gap:6px;align-items:center;border:1px solid #1f3348;background:#0b1520;border-radius:999px;padding:8px 11px;color:#a8bfd7;font-size:12px}
+.iconBtn{width:36px;height:36px;border:1px solid #22374e;border-radius:10px;background:#0b1520;display:grid;place-items:center}
+.hero{display:grid;grid-template-columns:1.6fr .9fr;gap:24px;align-items:end;padding:76px 0 36px}
+.eyebrow,.label{font-size:10px;letter-spacing:.18em;color:#6d839b}
+.hero h1{font-size:clamp(44px,6vw,76px);line-height:.98;max-width:800px;margin:13px 0 17px;letter-spacing:-.05em}
+.hero h1 em{font-style:normal;color:#7ee7c6}
+.sub{max-width:690px;line-height:1.7;color:#8da0b4;font-size:15px}
+.statusCard{border:1px solid #213448;background:linear-gradient(160deg,#0d1723,#091019);padding:20px;border-radius:20px}
+.statusCard.on{border-color:#1d5a4b;box-shadow:0 0 0 1px #16392f}
+.statusTop{display:flex;align-items:center;gap:8px;color:#94aac0;font-size:12px}
+.dot{width:8px;height:8px;border-radius:99px;background:#566d83}
+.on .dot{background:#57e0aa;box-shadow:0 0 15px #57e0aa}
+.statusMain{font-size:22px;font-weight:650;margin:24px 0 8px}
+.statusMeta{display:flex;justify-content:space-between;color:#72879e;font-size:11px}
+.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px}
+.panel{position:relative;border:1px solid #1b2c3d;background:#0b121b;border-radius:18px;padding:22px;overflow:hidden}
+.panelHead{display:flex;justify-content:space-between;align-items:flex-start}
+.panel h2{margin:6px 0 0;font-size:20px;letter-spacing:-.02em}
+.tinyBadge{display:flex;gap:6px;align-items:center;color:#77bca8;font-size:11px}
+.connectBtn{width:100%;margin:24px 0 18px;padding:22px;border:1px solid #25425a;border-radius:16px;background:#0d1a27;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer;transition:.2s}
+.connectBtn:hover{transform:translateY(-1px);border-color:#3e6b86}
+.connectBtn.connected{border-color:#1e6553;background:#0c201b}
+.orb{width:58px;height:58px;display:grid;place-items:center;border-radius:50%;background:#10263a;border:1px solid #345873;margin-bottom:2px}
+.connected .orb{background:#0f3229;border-color:#2b846b}
+.connectBtn strong{font-size:17px}
+.connectBtn span:last-child{font-size:11px;color:#758ba1}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #172737;padding-top:16px;gap:8px}
+.metrics span,.serverInfo span{display:block;font-size:9px;color:#62768b;letter-spacing:.15em}
+.metrics strong,.serverInfo strong{display:flex;gap:4px;align-items:center;margin-top:7px;font-size:12px}
+.selectBox{margin-top:22px;display:flex;justify-content:space-between;align-items:center;padding:15px;border:1px solid #22384d;background:#0a1723;border-radius:13px;cursor:pointer}
+.selectBox strong,.selectBox span{display:block}
+.selectBox span{font-size:11px;color:#71879e;margin-top:4px}
+.serverMenu{position:absolute;z-index:5;left:22px;right:22px;top:118px;border:1px solid #274058;border-radius:13px;background:#0b1621;box-shadow:0 18px 50px #0009;overflow:hidden}
+.serverMenu button{width:100%;display:flex;justify-content:space-between;padding:13px 14px;background:transparent;border:0;border-bottom:1px solid #172738;cursor:pointer}
+.serverMenu button:last-child{border:0}
+.serverMenu b{display:inline-block;width:25px;color:#7ee7c6;font-size:10px;margin-right:8px}
+.serverMenu small{color:#72879d}
+.serverInfo{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-top:22px}
+.toggleRow{width:100%;padding:14px 0;display:flex;justify-content:space-between;align-items:center;background:transparent;border:0;border-bottom:1px solid #172534;text-align:left;cursor:pointer}
+.toggleRow:last-child{border-bottom:0}
+.toggleRow strong,.toggleRow small{display:block}
+.toggleRow small{color:#71869c;font-size:11px;margin-top:5px}
+.switch{width:38px;height:22px;padding:3px;border-radius:99px;background:#172633;border:1px solid #2b3d4e}
+.switch span{display:block;width:14px;height:14px;border-radius:50%;background:#70869a;transition:.2s}
+.switch.active{background:#155645;border-color:#2a8a6c}
+.switch.active span{margin-left:14px;background:#7ee7c6}
+.controlPanel{min-height:210px}
+.deviceRow{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:20px;padding:15px;border-radius:14px;background:#0a1722;border:1px solid #1d3144}
+.deviceRow>div{display:flex;gap:11px;align-items:center}
+.deviceRow strong,.deviceRow span{display:block}
+.deviceRow span{color:#6f849a;font-size:11px;margin-top:4px;max-width:390px}
+.deviceRow button{border:1px solid #33546a;background:#0e1f2c;border-radius:10px;padding:9px 12px;font-size:11px;cursor:pointer}
+.note{display:flex;gap:8px;align-items:flex-start;color:#6f849a;font-size:10px;line-height:1.5;margin-top:14px}
+.note svg{flex:0 0 auto;margin-top:1px}
+footer{display:flex;justify-content:space-between;padding:20px 3px 2px;color:#60758b;font-size:10px}
+.good{color:#6cc9ab}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:54px}.grid{grid-template-columns:1fr}.shell{padding:20px 16px}.hero h1{font-size:48px}}
+@media(max-width:560px){.securePill{display:none}.metrics,.serverInfo{grid-template-columns:1fr 1fr}.metrics div:last-child{display:none}footer{flex-direction:column;gap:8px}.deviceRow{flex-direction:column;align-items:flex-start}.deviceRow button{width:100%}}
